@@ -1,0 +1,245 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Formato página web - Grid */
+
+.grid-container{
+    height: 100vh;
+}
+
+/* Barra Navegación */
+
+nav{
+    background-color: rgb(241, 71, 90);
+    color: white;
+    grid-area: barra-navegacion;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    font-weight: bolder;
+}
+
+.burger-menu{
+    cursor: pointer;
+}
+
+.menu{
+    display:none;
+}
+
+/* Botón Orden */
+
+.orden{
+    grid-area: orden;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: rgb(234 141 128 / 30%)
+}
+
+.boton-orden{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.boton-orden select{
+    font-size: 1rem;
+    padding: 0.4rem;
+    width: 100vh;
+}
+
+.orden p{
+    text-align:center;
+    margin:0;
+    padding: 0.3rem 0 0.3rem 0;
+}
+
+/* Sección Principal */
+
+main{
+    grid-area: principal;
+    padding: 1rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.mascota{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px gray solid;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.mascota img{
+    width: 20rem;
+}
+
+
+.descripcion{
+    padding: 0 1rem 0 1rem;
+    text-align: center;
+}
+
+.edad{
+    font-size: large;
+    color:darkslategrey;
+    font-weight: bold;
+}
+
+button{
+    cursor:pointer;
+    margin-top: 1rem;
+    width: 20rem;
+    background-color: rgb(241, 71, 90);
+    color: white;
+    height: 2rem;
+}
+
+/* Footer */
+
+footer{
+    grid-area: footer;
+    background-color: rgb(241, 71, 90);
+    color: white;
+    padding: 1rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redes-sociales{
+    display:flex;
+    gap: 20px;
+    padding-bottom: 0.5rem;
+}
+
+.redes-sociales i{
+    cursor:pointer;
+}
+
+footer p{
+    font-size: 0.8rem;
+}
+
+/* Responsive Tablet */
+
+@media (min-width: 576px){
+    .grid-container{
+        display:grid;
+        grid-template-areas: 
+        "barra-navegacion barra-navegacion"
+        "orden principal"
+        "orden principal"
+        "footer footer"
+        ;
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: 10% 1fr 1fr 10%;
+    }
+
+    /* Barra de Navegación */
+    .burger-menu{
+        display:none;
+    }
+    
+    .menu{
+        display:block;
+    }
+
+    .menu ul{
+        list-style: none;
+        display:flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .menu ul li{
+        cursor: pointer;
+    }
+    
+    /* Principal */
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: flex-start;
+        gap: 10px;
+        overflow-y: scroll;
+    }
+
+    .mascota img{
+        width: 13rem;
+    }
+
+    button{
+        width:13rem;
+    }
+
+}
+
+/* Para pantalla de computador */
+
+@media (min-width: 992px){
+    .grid-container{
+        display:grid;
+        grid-template-areas: 
+        "barra-navegacion barra-navegacion"
+        "orden principal"
+        "orden principal"
+        "footer footer"
+        ;
+        grid-template-columns: 15% 1fr;
+        grid-template-rows: 10% 1fr 1fr 10%;
+    }
+
+    /* Barra de Navegación */
+    .burger-menu{
+        display:none;
+    }
+    
+    .menu{
+        display:block;
+    }
+
+    .menu ul{
+        list-style: none;
+        display:flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    .menu ul li{
+        cursor: pointer;
+    }
+    
+    /* Principal */
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: flex-start;
+        gap: 10px;
+        overflow-y: scroll;
+    }
+    
+    .mascota img{
+        width: 16rem;
+    }
+
+    button{
+        width: 16rem;
+    }
+
+}
