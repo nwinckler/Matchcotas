@@ -134,6 +134,7 @@ footer{
 
 footer p{
     font-size: 0.8rem;
+    text-align: center;
 }
 
 /* Responsive Tablet */
@@ -196,12 +197,12 @@ footer p{
     .grid-container{
         display:grid;
         grid-template-areas: 
-        "barra-navegacion barra-navegacion"
-        "orden principal"
-        "orden principal"
-        "footer footer"
+        "barra-navegacion orden"
+        "barra-navegacion principal"
+        "barra-navegacion principal"
+        "footer principal"
         ;
-        grid-template-columns: 15% 1fr;
+        grid-template-columns: 20% 1fr;
         grid-template-rows: 10% 1fr 1fr 10%;
     }
 
@@ -217,7 +218,8 @@ footer p{
     .menu ul{
         list-style: none;
         display:flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: space-around;
         gap: 10px;
     }
 
@@ -225,6 +227,13 @@ footer p{
         cursor: pointer;
     }
     
+    nav{
+        flex-direction:column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
     /* Principal */
     main{
         display: grid;
